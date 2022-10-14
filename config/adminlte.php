@@ -314,36 +314,28 @@ return [
         [
             'text'        => 'Productos',
             'url'         => 'articulos',
-            'icon'        => 'far fa-fw fa-file',
-            'label'       => 'crud',
+            'icon'        => 'fas fa-fw fa-boxes-packing',
+            'label'       => 'catálogo',
             'label_color' => 'success',
         ],
         // ['header' => 'account_settings'],
         [
             'text' => 'Clientes',
             'url'  => 'clientes',
-            'icon' => 'fas fa-fw fa-user',
-            'submenu' => [
-                [
-                    'text'=>'Registar Clientes',
-                    'url' => 'clientes'
-                ],
-                [
-                    'text'=>'Catalogo Clientes',
-                    'url' => 'clientes/index'
-                ],
-                
-            ]
+            'icon' => 'fas fa-fw fa-id-card-clip',
+            'label'       => 'catálogo',
+            'label_color' => 'success',
+            
         ],
         [
             'text' => 'Proveedores',
             'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-fw fa-truck-moving',
         ],
         [
             'text' => 'Ventas',
             'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-lock',
+            'icon' => 'fas fa-fw fa-dollar-sign',
         ],
         [
             // 'text'    => 'multilevel',

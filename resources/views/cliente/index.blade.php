@@ -3,7 +3,7 @@
 @section('title', 'Clientes')
 
 @section('content_header')
-    <div class="alert alert-primary text-center" role="alert">
+    <div class="alert alert-success text-center" role="alert">
         <h1 class="text-center">Lista de Clientes</h1>
     </div>
     
@@ -12,7 +12,7 @@
 @section('content')
 
 
-<a href="{{route('clientes.create')}}" class="btn btn-primary mb-3">Registrar Cliente</a>
+<a href="{{route('clientes.create')}}" class="btn btn-success mb-3">Registrar Cliente</a>
 <table id="clientes" class="table table-dark table-striped mt-4">
 
     <thead>
@@ -27,18 +27,18 @@
         </tr>
     </thead>
     <tbody>
-        @foreach ($clientes as $cliente)
+        @foreach ($clientes as $clientes)
             <tr>
-                <td>{{$cliente->id}}</td>
-                <td>{{$cliente->Nombre}}</td>
-                <td>{{$cliente->Apellido}}</td>
-                <td>{{$cliente->Correo}}</td>
-                <td>{{$cliente->Telefono}}</td>
-                <td>{{$cliente->CP}}</td>
+                <td>{{$clientes->id}}</td>
+                <td>{{$clientes->Nombre}}</td>
+                <td>{{$clientes->Apellido}}</td>
+                <td>{{$clientes->Correo}}</td>
+                <td>{{$clientes->Telefono}}</td>
+                <td>{{$clientes->CP}}</td>
                 <td>
                     
-                    <form action="#" method="POST">
-                        <a href="#" class="btn btn-info">Editar</a>
+                    <form action="{{route('clientes.destroy', $clientes->id)}}" method="POST">
+                        <a href="{{route('clientes.edit', $clientes->id)}}" class="btn btn-info">Editar</a>
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger">Borrar</button>
@@ -71,7 +71,7 @@
                     "zeroRecords": "Nothing found - sorry",
                     "info": " Pagina _PAGE_ de _PAGES_",
                     "infoEmpty": "No records available",
-                    "infoFiltered": "(filtered from _MAX_ total records)",
+                    "infoFiltered": "(filtrado de _MAX_ registros totales)",
                     "search": "Buscar",
                     "paginate":{
                         "next": "Siguiente",

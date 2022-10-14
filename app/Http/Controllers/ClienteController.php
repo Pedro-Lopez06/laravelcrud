@@ -67,7 +67,8 @@ class ClienteController extends Controller
      */
     public function edit($id)
     {
-        //
+        $clientes = Cliente::find($id);
+        return view('cliente.edit', compact('clientes'));
     }
 
     /**
@@ -79,7 +80,15 @@ class ClienteController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $cliente = Cliente::find($id);
+        $cliente->Nombre=$request->get('nombre');
+        $cliente->Apellido=$request->get('apellido');
+        $cliente->Correo=$request->get('correo');
+        $cliente->Telefono=$request->get('telefono');
+        $cliente->CP=$request->get('cp');
+
+        $cliente->save();
+        return  redirect('/clientes');
     }
 
     /**
@@ -90,6 +99,7 @@ class ClienteController extends Controller
      */
     public function destroy($id)
     {
-        //
-    }
+        $cliente = Cliente::find($id);
+        $cliente->delete();
+        return redirect('/clientes');    }
 }

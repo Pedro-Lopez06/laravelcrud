@@ -1,4 +1,4 @@
-{{-- @extends('adminlte::page')
+@extends('adminlte::page')
 
 @section('title', 'Registrar Cliente')
 
@@ -31,7 +31,7 @@
         <label for="" class="form-label">Codigo postal</label>
         <input id="precio" name="cp" type="number" class="form-control" tabindex="4">
     </div>
-    <a href="/articulos" class="btn btn-secundary" tabindex="5">Cancelar</a>
+    <a href="/clientes" class="btn btn-secundary" tabindex="5">Cancelar</a>
     <button type="submit" class="btn btn-primary" tabindex="6">Guardar</button> 
     
 </form>
@@ -43,4 +43,4 @@
 
 @section('js')
     <script> console.log('Hi!'); </script>
-@stop --}}
+@stop
