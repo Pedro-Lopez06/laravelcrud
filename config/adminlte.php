@@ -14,9 +14,9 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => '',
     'title_prefix' => '',
-    'title_postfix' => '',
+    'title_postfix' => ' | PasteleriaFati',
 
     /*
     |--------------------------------------------------------------------------
@@ -187,7 +187,7 @@ return [
     */
 
     'classes_body' => '',
-    'classes_brand' => '',
+    'classes_brand' => 'bg-info',
     'classes_brand_text' => '',
     'classes_content_wrapper' => '',
     'classes_content_header' => '',
@@ -253,7 +253,7 @@ return [
     */
 
     'use_route_url' => false,
-    'dashboard_url' => 'home',
+    'dashboard_url' => 'articulos',
     'logout_url' => 'logout',
     'login_url' => 'login',
     'register_url' => 'register',
@@ -293,7 +293,7 @@ return [
         // Navbar items:
         [
             'type'         => 'navbar-search',
-            'text'         => 'search',
+            'text'         => 'Buscar',
             'topnav_right' => true,
         ],
         [
@@ -313,60 +313,76 @@ return [
         ],
         [
             'text'        => 'Productos',
-            'url'         => 'admin/pages',
+            'url'         => 'articulos',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 'crud',
             'label_color' => 'success',
         ],
         // ['header' => 'account_settings'],
-        // [
-        //     'text' => 'profile',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-user',
-        // ],
-        // [
-        //     'text' => 'change_password',
-        //     'url'  => 'admin/settings',
-        //     'icon' => 'fas fa-fw fa-lock',
-        // ],
-        // [
-        //     'text'    => 'multilevel',
-        //     'icon'    => 'fas fa-fw fa-share',
-        //     'submenu' => [
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //         [
-        //             'text'    => 'level_one',
-        //             'url'     => '#',
-        //             'submenu' => [
-        //                 [
-        //                     'text' => 'level_two',
-        //                     'url'  => '#',
-        //                 ],
-        //                 [
-        //                     'text'    => 'level_two',
-        //                     'url'     => '#',
-        //                     'submenu' => [
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                         [
-        //                             'text' => 'level_three',
-        //                             'url'  => '#',
-        //                         ],
-        //                     ],
-        //                 ],
-        //             ],
-        //         ],
-        //         [
-        //             'text' => 'level_one',
-        //             'url'  => '#',
-        //         ],
-        //     ],
-        // ],
+        [
+            'text' => 'Clientes',
+            'url'  => 'clientes',
+            'icon' => 'fas fa-fw fa-user',
+            'submenu' => [
+                [
+                    'text'=>'Registar Clientes',
+                    'url' => 'clientes'
+                ],
+                [
+                    'text'=>'Catalogo Clientes',
+                    'url' => 'clientes/index'
+                ],
+                
+            ]
+        ],
+        [
+            'text' => 'Proveedores',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            'text' => 'Ventas',
+            'url'  => 'admin/settings',
+            'icon' => 'fas fa-fw fa-lock',
+        ],
+        [
+            // 'text'    => 'multilevel',
+            // 'icon'    => 'fas fa-fw fa-share',
+            // 'submenu' => [
+            //     [
+            //         'text' => 'level_one',
+            //         'url'  => '#',
+            //     ],
+            //     [
+            //         'text'    => 'level_one',
+            //         'url'     => '#',
+            //         'submenu' => [
+            //             [
+            //                 'text' => 'level_two',
+            //                 'url'  => '#',
+            //             ],
+            //             [
+            //                 'text'    => 'level_two',
+            //                 'url'     => '#',
+            //                 'submenu' => [
+            //                     [
+            //                         'text' => 'level_three',
+            //                         'url'  => '#',
+            //                     ],
+            //                     [
+            //                         'text' => 'level_three',
+            //                         'url'  => '#',
+            //                     ],
+            //                 ],
+            //             ],
+            //         ],
+            //     ],
+            //     [
+            //         'text' => 'level_one',
+            //         'url'  => '#',
+            //     ],
+            // ],
+        ],
         // ['header' => 'labels'],
         // [
         //     'text'       => 'important',

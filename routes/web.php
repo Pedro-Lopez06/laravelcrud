@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticuloController;
-use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\ClienteController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,20 +14,15 @@ use App\Http\Controllers\ClientesController;
 |
 */
 
-Route::get('/', function () {
-    return view('auth.login');
-});
 
-Route::middleware([
-    'auth:sanctum',
-    config('jetstream.auth_session'),
-    'verified'
-])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-    })->name('dashboard');
-});
+
 
 
 Route::resource('articulos', ArticuloController::class);
+Route::resource('clientes', ClienteController::class);
 // Route::resource('articulos', ClientesController::class);
+
+
+Route::get('/', function () {
+    return view('auth.login');
+});
