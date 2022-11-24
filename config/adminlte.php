@@ -329,13 +329,17 @@ return [
         ],
         [
             'text' => 'Proveedores',
-            'url'  => 'admin/settings',
+            'url'  => 'proveedores',
             'icon' => 'fas fa-fw fa-truck-moving',
+            'label'       => 'catálogo',
+            'label_color' => 'success',
         ],
         [
             'text' => 'Ventas',
-            'url'  => 'admin/settings',
+            'url'  => 'ventas',
             'icon' => 'fas fa-fw fa-dollar-sign',
+            'label'       => 'catálogo',
+            'label_color' => 'success',
         ],
         [
             // 'text'    => 'multilevel',

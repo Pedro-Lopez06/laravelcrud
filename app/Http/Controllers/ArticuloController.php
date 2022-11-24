@@ -45,7 +45,7 @@ class ArticuloController extends Controller
         $articulos->description = $request->get('descripcion');
         $articulos->cantidad = $request->get('cantidad');
         $articulos->precio = $request->get('precio');
-
+ 
         $articulos->save();
         return redirect('/articulos');
     }

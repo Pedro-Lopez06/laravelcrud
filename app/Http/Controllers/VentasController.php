@@ -2,21 +2,21 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Proveedor;
+use App\Models\Cliente;
 use Illuminate\Http\Request;
+use App\Models\Ventas;
 
-
-class ProveedorController extends Controller
+class VentasController extends Controller
 {
     public function __construct()
     {
         $this->middleware('auth');
     } 
-    
+   
     public function index()
     {
-        $proveedores = Proveedor::all();
-        return view('proveedor.index', compact('proveedores'));
+        $ventas = Ventas::all();
+        return view('ventas.index', compact('ventas'));
     }
 
     /**
@@ -25,8 +25,9 @@ class ProveedorController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
-        return view('proveedor.create');
+    {   
+        $clientes = Cliente::all();
+        return view('ventas.create', compact('clientes'));
     }
 
     /**
@@ -37,13 +38,13 @@ class ProveedorController extends Controller
      */
     public function store(Request $request)
     {
-        $proveedores = new Proveedor();
-        $proveedores->nombre = $request -> get('nombre');
-        $proveedores->telefono = $request -> get('telefono');
-        $proveedores->correo = $request -> get('correo');
+        $venta = new Ventas();
+        $venta->Cliente = $request -> get('cliente');
+        $venta->Monto = $request -> get('monto');
+        
 
-        $proveedores->save();
-        return redirect('/proveedores');
+        $venta->save();
+        return redirect('/ventas');
     }
 
     /**
@@ -65,8 +66,9 @@ class ProveedorController extends Controller
      */
     public function edit($id)
     {
-        $proveedores = Proveedor::find($id);
-        return view('proveedor.edit', compact('proveedores'));
+        $venta = Ventas::find($id);
+        $clientes = Cliente::all();
+        return view('ventas.edit', compact('venta', 'clientes'));
     }
 
     /**
@@ -78,13 +80,13 @@ class ProveedorController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $proveedor = Proveedor::find($id);
-        $proveedor->Nombre = $request -> get('nombre');
-        $proveedor->Telefono = $request -> get('telefono');
-        $proveedor->Correo = $request -> get('correo');
+        $venta = Ventas::find($id);
+        $venta->Cliente = $request -> get('cliente');
+        $venta->Monto = $request -> get('monto');
+        
 
-        $proveedor->save();
-        return redirect('/proveedores');
+        $venta->save();
+        return redirect('/ventas');
     }
 
     /**
@@ -95,8 +97,8 @@ class ProveedorController extends Controller
      */
     public function destroy($id)
     {
-        $proveedor = Proveedor::find($id);
-        $proveedor->delete();
-        return redirect('/proveedores'); 
+        $venta = Ventas::find($id);
+        $venta->delete();
+        return redirect('/ventas');
     }
 }

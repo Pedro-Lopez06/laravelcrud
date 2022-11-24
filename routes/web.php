@@ -3,6 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ArticuloController;
 use App\Http\Controllers\ClienteController;
+use App\Http\Controllers\ProveedorController;
+use App\Http\Controllers\VentasController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,7 +23,9 @@ use App\Http\Controllers\ClienteController;
 
 Route::resource('articulos', ArticuloController::class);
 Route::resource('clientes', ClienteController::class);
-// Route::resource('articulos', ClientesController::class);
+Route::resource('proveedores', ProveedorController::class);
+Route::resource('ventas', VentasController::class);
+
 
 
 Route::get('/', function () {
